@@ -172,3 +172,6 @@ function limpiar(){
     lmantisa.textContent = "";
     lresultado.textContent = "";
 }
+function irACalculadora() {
+    window.location.href = "index.html";
+  }
