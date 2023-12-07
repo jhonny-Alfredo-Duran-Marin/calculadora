@@ -4,58 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesF.css" />
-    <title>Punto FLotante</title>
+    <title>Punto Flotante</title>
   </head>
   <body>
     <header>
-      <img class="imgen" src="resources/Escudo.png" />
-       <h1>Calculadora de Ensamblador</h1>
+      <img class="fondo" src="resources/fondo1.jpg" />
+      <h1>Convertidor de Formato</h1>
     </header>
     <section>
       <article>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio numquam
-        voluptatem dolores. Explicabo cum, fugiat autem nulla vitae molestias
-        voluptates nemo, exercitationem alias dolorum minima itaque sequi, eaque
-        repudiandae doloribus?
+        <p>
+          Descubre nuestro convertidor automático de formato, diseñado para
+          transformar números decimales y binarios en sus representaciones binarias
+          (doble precisión) según el Estándar <strong>IEEE 754 </strong>. También te proporciona
+          las representaciones hexadecimal y decimal de la binaria generada. <br>
+          Su uso es simple: ingresa el número decimal, incluso en notación
+          científica, en la casilla correspondiente y selecciona el tipo de
+          conversión deseado al hacer clic en los botones.
+        </p>
       </article>
     </section>
     <section>
       <div class="panel">
         <div class="calculadora">
-          <form action="puntoFlotante.html">
+          <form action="puntoFlotante.html" onsubmit="return false;">
             <label>Numero a Convertir: </label>
-            <input type="text" placeholder="Ingrese un numero" />
-            <button id="clear" class="button-action">BORRAR</button>
-            <button class="button-action">BINARIO</button>
-            <button class="button-action">DECIMAL</button>
+            <input
+              type="text"
+              id="numeroInput"
+              placeholder="Ingrese un numero"
+              pattern="[+-]?[0-9]*(\.[0-9]+)?"
+              title="Ingrese un número, puede ser entero o decimal (positivo o negativo)"
+            />
+
+            <button type="button" id="clear" class="button-action" onclick="borrar()">BORRAR</button>
+            <button type="button" class="button-action" onclick="convertiBinario()">BINARIO</button>
+            <button type="button" class="button-action" onclick="convertiDecimal()">DECIMAL</button>
           </form>
           <h2>Resultados</h2>
           <div class="convercionA">
-            <h2>Convercion a 32 bits</h2>
+            <h2>Conversión a 32 bits</h2>
             <div class="button">
-              <label for="">Signo ( 1 bits )</label>
-              <label for="">Exponente ( 8 bits )</label>
-              <label for="">Mantisa ( 23 bits )</label>
-              <label for=""></label>
-              <label for=""></label>
-              <label for=""></label>
+              <label >Signo ( 1 bits )</label> <label id="sig32"></label>
+              <label >Exponente ( 8 bits )</label> <label id="expo32"></label>
+              <label >Mantisa ( 23 bits )</label>  <label id="mant32"></label>
+             
             </div>
-            <label for="">Resultado:</label>
+            <label>Resultado:</label>
           </div>
           <div class="convercioB">
-            <h2>Convercion a 64 bits</h2>
+            <h2>Conversión a 64 bits</h2>
             <div class="button">
-              <label for="">Signo ( 1 bits )</label>
-              <label for="">Exponente ( 11 bits )</label>
-              <label for="">Mantisa ( 52 bits )</label>
-              <label for=""></label>
-              <label for=""></label>
-              <label for=""></label>
+              <label >Signo ( 1 bits )</label>  <label id="sig64"></label>
+              <label >Exponente ( 11 bits )</label> <label id="expo64"></label>
+              <label >Mantisa ( 52 bits )</label><label id="mant64"></label>
             </div>
-            <label for="">Resultado:</label>
+            <label>Resultado:</label>
           </div>
         </div>
       </div>
     </section>
+    <footer>
+      <img class="imgen" src="resources/Escudo.png" />
+      <p>Derechos Reservados</p>
+    </footer>
   </body>
+  <script src="puntoFlotante.js"></script>
 </html>

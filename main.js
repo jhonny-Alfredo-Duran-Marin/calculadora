@@ -4,23 +4,28 @@ var estado = "DEC";
 botones.forEach((boton) => {
   boton.addEventListener("click", () => {
     const botonApretado = boton.textContent;
+
     if (botonApretado === "HEXA") {
       enableButtonsHexa();
+      pantalla.textContent = "";
       estado = "HEXA";
       return;
     }
     if (botonApretado === "OCTA") {
       enableButtonsOcta();
+      pantalla.textContent = "";
       estado = "OCTA";
       return;
     }
     if (botonApretado === "BIN") {
       enableButtonBin();
+      pantalla.textContent = "";
       estado = "BIN";
       return;
     }
     if (botonApretado === "DEC") {
       enableButtonDec();
+      pantalla.textContent = "";
       estado = "DEC";
       return;
     }
@@ -43,6 +48,10 @@ botones.forEach((boton) => {
       return;
     }
     pantalla.textContent += botonApretado;
+    if (pantalla.textContent.length >= MAX_LENGTH) {
+      pantalla.textContent += "\n";
+      return;
+    }
   });
 });
 //---------- button fuctions ----------
@@ -301,3 +310,8 @@ function esSigno(d) {
 function esParentesis(d) {
   return d === "(" || d === ")";
 }
+function irAPagina() {
+  window.location.href = "puntoFlotante.html";
+}
+//-------------------- operaciones de punto flotante --------------------
+

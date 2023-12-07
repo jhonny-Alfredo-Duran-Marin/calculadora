@@ -1,4 +1,3 @@
-
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -10,21 +9,51 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(45, 66, 99, 0.3);
+  color: #fff;
+  padding: 10px;
+  font-size: 24px;
+  position: relative;
+}
+
+header .fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  z-index: -1;
+  filter: brightness(0.7) saturate(150%);
+}
+
+footer {
+  display: flex;
+  align-items: center;
   background-color: #2d4263;
   color: #fff;
   padding: 10px;
   font-size: 24px;
 }
-header img {
-  
+
+footer img {
   margin-right: 10px;
-  width: 100px; 
-  height: 150px;
+  width: 50px;
+  height: 50px;
 }
+
+footer p {
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 section {
   margin: 20px;
 }
-.principal{
+
+.principal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,38 +63,43 @@ section {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-
   padding: 20px;
   border-radius: 10px;
-  width: 520px;
+  width: 100%; /* Ajuste para ocupar el ancho completo */
+  max-width: 520px; /* Establece un ancho máximo para evitar que se expanda demasiado en pantallas grandes */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.calculadora{
- display: grid;
- grid-template-columns: repeat(5, 1fr);
- max-width: 100%;
- padding: 1.5rem;
- border-radius: 1rem;
-}
-.pantalla{
-  background-color: #fff;
-  grid-column: 1/-1;
+
+.calculadora {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 100%;
   padding: 1.5rem;
-  font-size: 2rem;
+  border-radius: 1rem;
+}
+
+.pantalla {
+  background-color: #e0e0e0;
+  grid-column: span 5;
+  padding: 1.5rem;
+  font-size: 2vw; /* Utiliza unidades vw para el tamaño de fuente */
   text-align: right;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   margin-bottom: 1rem;
   font-family: monospace;
   font-weight: 600;
+  word-wrap: break-word;
 }
-.button-action{
+
+.button-action {
   display: flex;
   justify-items: center;
   align-items: center;
-  border-radius: .5rem;
- padding: 1rem;
- margin: 1px;
+  border-radius: 0.5rem;
+  padding: 1vw; /* Utiliza unidades vw para el relleno del botón */
+  margin: 1px;
 }
+
 #ac,
 #dell,
 #add,
@@ -76,12 +110,66 @@ section {
 #igual {
   grid-column: span 2;
 }
-.button-action:hover{
-  background-color: #2d4263;;
+
+.button-action:hover {
+  background-color: #2d4263;
   color: #f2f2f2;
 }
-.button-option{
+
+.button-option {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  border-radius: 0.5rem;
 }
 
+/* Agrega estilos para la sección de texto */
+article {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  line-height: 1.6; /* Espaciado entre líneas */
+  font-size: 2vw; /* Ajusta el tamaño de fuente con unidades vw */
+  color: #333; /* Color del texto */
+}
+
+/* Estilo para los enlaces dentro del artículo */
+article a {
+  color: #2d4263; /* Cambia el color del enlace */
+  text-decoration: underline; /* Subraya el enlace */
+}
+
+/* Estilos para pantallas medianas */
+@media only screen and (max-width: 768px) {
+  header {
+    font-size: 20px;
+  }
+
+  footer {
+    font-size: 20px;
+  }
+
+  .calculadora {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 480px) {
+  header {
+    font-size: 18px;
+  }
+
+  footer {
+    font-size: 18px;
+  }
+
+  .panel {
+    padding: 10px;
+  }
+
+  .calculadora {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -10,22 +10,31 @@
     <!----- titulo y presentacion----->
 
     <header>
-      <img class="imgen" src="resources/Escudo.png" />
+      <img class="fondo" src="resources/fondo1.jpg" />
+      
       <h1>Calculadora de Ensamblador</h1>
     </header>
     <section>
       <article>
-        Primera calculadora La primera calculadora se creó en 1642. Su inventor
-        fue Blaise Pascal, cuyo padre era contable. Con tan solo 19 años, creó
-        la máquina de calcular para liberar a su progenitor del aburrido trabajo
-        de sumar una y otra vez columnas de números.
-      </article>
+        <h2>Calculadora Multibase</h2>
+        <p>¡Bienvenido a la Calculadora Multibase! Esta innovadora herramienta te permite realizar operaciones aritméticas en distintas bases numéricas, ofreciendo flexibilidad y versatilidad en tus cálculos.</p>
+        
+        <p>Características destacadas:</p>
+        <ul>
+            <li><strong>Operaciones en Bases Variadas:</strong> Realiza sumas, restas, multiplicaciones y divisiones no solo en base 10, sino también en otras bases como binario, octal y hexadecimal.</li>
+            <li><strong>Conversión Instantánea:</strong> Cambia fácilmente entre bases numéricas para adaptar la calculadora a tus necesidades específicas.</li>
+            <li><strong>Interfaz Intuitiva:</strong> Una interfaz amigable que facilita el ingreso de números en diferentes bases y la visualización clara de los resultados.</li>
+        </ul>
+        
+        <p>Ya no estás limitado al sistema decimal. Explora el mundo de las bases numéricas y realiza cálculos de manera eficiente con la Calculadora Multibase. ¡Descúbrela ahora y simplifica tus operaciones matemáticas!</p>
+    </article>
     </section>
     <!----- secion de datos ---------->
     <section class="principal">
       <div class="panel">
         <div class="calculadora">
           <div class="pantalla"></div>
+        
           <button disabled class="button-action hexa">A</button>
           <button class="button-action">BIN</button>
           <button class="button-action">HEXA</button>
@@ -53,14 +62,16 @@
           <button id="igual" class="button-action">=</button>
         </div>
         <div class="button-option">
-          <button class="calculator-button">
-            <a href="puntoFlotante.html">PUNTO FLOTANTE</a>
-          </button>
-          <button class="calculator-button">DESPLAZAMIENTOS</button>
-          <button class="calculator-button">BITS A BITS</button>
+          <button class="calculator-button" onclick="irAPagina()">
+            PUNTO FLOTANTE
+        </button>
         </div>
       </div>
     </section>
+      <footer> 
+        <img class="imgen" src="resources/Escudo.png" />
+        <p>Derecho Resevados </p>
+      </footer>
   </body>
   <script src="main.js"></script>
 </html>
