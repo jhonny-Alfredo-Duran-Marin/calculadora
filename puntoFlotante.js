@@ -5,33 +5,35 @@ function borrar() {
 
 function convertiBinario() {
   let numero = document.getElementById("numeroInput").value;
-  if (isBinary(numero) && validar(numero)) {
+  if (isBinary(numero) && validar(numero) && numero.length>0) {
     binario32bist(numero);
     binario64bist(numero);
   }
 }
 function convertiDecimal() {
   let numero = document.getElementById("numeroInput").value;
-  let binDecimal = "";
-  let bin = "";
-  let partes = numero.split(".");
-  let entero = parseInt(partes[0], 10).toString(2);
-  let decimal = parseFloat("0." + partes[0], 10);
-  for (let i = 1; i <= 52; i++) {
-    decimal = decimal * 2;
-    if (decimal >= 1) {
-      let aux = parseInt(decimal.toString().split(".")[0], 10);
-      decimal = decimal - aux;
-      binDecimal = binDecimal + "1";
-    } else {
-      binDecimal = binDecimal + "0";
+  if (validar(numero) && numero.length>0) {
+    let binDecimal = "";
+    let bin = "";
+    let partes = numero.split(".");
+    let entero = parseInt(partes[0], 10).toString(2);
+    let decimal = parseFloat("0." + partes[0], 10);
+    for (let i = 1; i <= 52; i++) {
+      decimal = decimal * 2;
+      if (decimal >= 1) {
+        let aux = parseInt(decimal.toString().split(".")[0], 10);
+        decimal = decimal - aux;
+        binDecimal = binDecimal + "1";
+      } else {
+        binDecimal = binDecimal + "0";
+      }
     }
+    bin = entero + "." + binDecimal;
+   
+      binario32bist(bin);
+      binario64bist(bin);
   }
-  bin = entero + "." + binDecimal;
-  if (validar(bin)) {
-    binario32bist(bin);
-    binario64bist(bin);
-  }
+ 
 }
 function binario32bist(numero) {
   //-- calculamos el signo

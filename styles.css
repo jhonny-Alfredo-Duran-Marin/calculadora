@@ -96,7 +96,7 @@ section {
   justify-items: center;
   align-items: center;
   border-radius: 0.5rem;
-  padding: 1vw; /* Utiliza unidades vw para el relleno del botón */
+  padding: 1vw; 
   margin: 1px;
 }
 
@@ -129,9 +129,9 @@ article {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
-  line-height: 1.6; /* Espaciado entre líneas */
-  font-size: 2vw; /* Ajusta el tamaño de fuente con unidades vw */
-  color: #333; /* Color del texto */
+  line-height: 1.6; 
+  font-size: 2vw; 
+  color: #2d4263
 }
 
 /* Estilo para los enlaces dentro del artículo */
