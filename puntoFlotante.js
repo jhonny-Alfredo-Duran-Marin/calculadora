@@ -75,12 +75,15 @@ function binario32bist(numero) {
     }
   }
   resultado = signo + expo + mantisa;
+  const hexadecimal = BigInt(`0b${resultado}`).toString(16);
+  const lresult = document.getElementById("result32");
   const lsigno = document.getElementById("sig32");
   const lexponente = document.getElementById("expo32");
   const lmantisa = document.getElementById("mant32");
   lsigno.textContent = signo;
   lexponente.textContent = expo;
   lmantisa.textContent = mantisa;
+  lresult.textContent = hexadecimal.toUpperCase();
 }
 function binario64bist(numero) {
   //-- calculamos el signo
@@ -125,12 +128,16 @@ function binario64bist(numero) {
     }
   }
   resultado = signo + expo + mantisa;
+  const hexadecimal = BigInt(`0b${resultado}`).toString(16);
+  const lresult = document.getElementById("result64");
   const lsigno = document.getElementById("sig64");
   const lexponente = document.getElementById("expo64");
   const lmantisa = document.getElementById("mant64");
   lsigno.textContent = signo;
   lexponente.textContent = expo;
   lmantisa.textContent = mantisa;
+  lresult.textContent = hexadecimal.toUpperCase();
+  
 }
 function validar(value) {
   if (value.split(".").length - 1 > 1) {
@@ -151,13 +158,17 @@ function limpiar(){
     const signo = document.getElementById("sig32");
     const exponente = document.getElementById("expo32");
     const mantisa = document.getElementById("mant32");
+    const resultado = document.getElementById("result32");
     signo.textContent = ""
     exponente.textContent = "";
     mantisa.textContent = "";
+    resultado.textContent = "";
     const lsigno = document.getElementById("sig64");
     const lexponente = document.getElementById("expo64");
     const lmantisa = document.getElementById("mant64");
+    const lresultado = document.getElementById("result64");
     lsigno.textContent = "";
     lexponente.textContent = "";
     lmantisa.textContent = "";
+    lresultado.textContent = "";
 }

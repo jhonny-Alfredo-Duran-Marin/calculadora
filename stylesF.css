@@ -57,8 +57,8 @@ article {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   line-height: 1.6;
-  font-size: 1.2em; /* Ajusta este valor según tu preferencia */
-  color: #333;
+  font-size: 1.2em; 
+  color: #2d4263;
 }
 
 section {
@@ -124,6 +124,11 @@ h2 {
   padding: 1.5em;
   border-radius: 8px;
   margin-top: 1.5em;
+}
+#result64,
+#result32{
+  color:  #2d4263;
+  font-size: 1.6em; 
 }
 
 /* Estilos para pantallas medianas */
