@@ -59,8 +59,8 @@ function binario32bist(numero) {
   } else {
     cadenaBinaria =
       cadenaBinaria[posPrimero - 1] + "." + cadenaBinaria.slice(posPrimero);
-    recorrido = -(posPunto - posPrimero);
-  }
+      recorrido = (posPunto - posPrimero);
+    }
   //--- calculamos el exponente ---------
   expo = (recorrido + 127).toString(2);
   if (expo.length < 8) {
