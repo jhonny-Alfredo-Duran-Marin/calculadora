@@ -17,12 +17,12 @@ function convertiDecimal() {
     let bin = "";
     let partes = numero.split(".");
     let entero = parseInt(partes[0], 10).toString(2);
-    let decimal = parseFloat("0." + partes[0], 10);
+    let decimal = parseFloat("0." + partes[1], 10);
+  
     for (let i = 1; i <= 52; i++) {
-      decimal = decimal * 2;
+            decimal = decimal * 2;
       if (decimal >= 1) {
-        let aux = parseInt(decimal.toString().split(".")[0], 10);
-        decimal = decimal - aux;
+        decimal = decimal - 1;
         binDecimal = binDecimal + "1";
       } else {
         binDecimal = binDecimal + "0";
@@ -113,7 +113,7 @@ function binario64bist(numero) {
       cadenaBinaria[posPrimero - 1] + "." + cadenaBinaria.slice(posPrimero);
     recorrido = -(posPunto - posPrimero);
   }
-  console.log(cadenaBinaria);
+  
   //--- calculamos el exponente ---------
   expo = (recorrido + 1023).toString(2);
   if (expo.length < 11) {
