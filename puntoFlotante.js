@@ -111,7 +111,7 @@ function binario64bist(numero) {
   } else {
     cadenaBinaria =
       cadenaBinaria[posPrimero - 1] + "." + cadenaBinaria.slice(posPrimero);
-    recorrido = -(posPunto - posPrimero);
+    recorrido = (posPunto - posPrimero);
   }
   
   //--- calculamos el exponente ---------
