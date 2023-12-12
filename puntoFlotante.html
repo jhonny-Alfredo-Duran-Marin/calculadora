@@ -20,7 +20,12 @@
           las representaciones hexadecimal y decimal de la binaria generada. <br>
           Su uso es simple: ingresa el número decimal, incluso en notación
           científica, en la casilla correspondiente y selecciona el tipo de
-          conversión deseado al hacer clic en los botones.
+          conversión deseado al hacer clic en los botones.  <br>
+          Para en buen uso del convertidor debe ingresar los datos en  el siguieten formato: <br>
+          <strong>NUMEROS DECIMALES</strong> <br>
+            2.5 ,-1.2 ,18.6321 ,-10101.10010<br>
+            <strong>NUMEROS BINARIOS</strong> <br>
+            11010.10100 ,-000101.010110 ,1.001000 ,-10101.10010
         </p>
       </article>
     </section>
@@ -32,10 +37,11 @@
             <input
               type="text"
               id="numeroInput"
-              placeholder="Ingrese un numero"
+              placeholder="Ingrese un numero en formato 1.2 o 11.1010 "
               pattern="[+-]?[0-9]*(\.[0-9]+)?"
               title="Ingrese un número, puede ser entero o decimal (positivo o negativo)"
             />
+
 
             <button type="button" id="clear" class="button-action" onclick="borrar()">BORRAR</button>
             <button type="button" class="button-action" onclick="convertiBinario()">BINARIO</button>

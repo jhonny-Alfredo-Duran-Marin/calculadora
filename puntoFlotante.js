@@ -5,14 +5,32 @@ function borrar() {
 
 function convertiBinario() {
   let numero = document.getElementById("numeroInput").value;
-  if (isBinary(numero) && validar(numero) && numero.length>0) {
+
+  if (!esNumeroK(numero)) {
+    alert("el dato ingresado no es considerado un numero valido: "+numero);
+  }
+ /// validar si esta en foramto binario
+
+
+  if (isBinary(numero) && validar(numero) && numero.length>0 && esNumeroK(numero)) {
     binario32bist(numero);
     binario64bist(numero);
   }
 }
+
+function esNumeroK(valor){
+  return !isNaN(valor);
+}
+
 function convertiDecimal() {
   let numero = document.getElementById("numeroInput").value;
-  if (validar(numero) && numero.length>0) {
+
+
+  if (!esNumeroK(numero)) {
+    alert("el dato ingresado no es considerado un numero valido: "+numero);
+  }
+
+  if (validar(numero) && numero.length>0 && esNumeroK(numero)) {
     let binDecimal = "";
     let bin = "";
     let partes = numero.split(".");
@@ -29,6 +47,7 @@ function convertiDecimal() {
       }
     }
     bin = entero + "." + binDecimal;
+   
    
       binario32bist(bin);
       binario64bist(bin);
@@ -142,15 +161,16 @@ function binario64bist(numero) {
   
 }
 function validar(value) {
-  if (value.split(".").length - 1 > 1) {
+  if ((value.split(".").length - 1) > 1) {
     return false;
   }
   return true;
 }
 function isBinary(value) {
-  let invalidValues = "ABCDEF23456789";
+  let invalidValues = "ABCDEFCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklamopqrstuvwxyz23456789";
   for (let character of value) {
     if (invalidValues.includes(character)) {
+      alert("el dato ingresado no es un valor en Binario: ");
       return false;
     }
   }
@@ -174,6 +194,7 @@ function limpiar(){
     lmantisa.textContent = "";
     lresultado.textContent = "";
 }
+
 function irACalculadora() {
     window.location.href = "index.html";
-  }
+}
